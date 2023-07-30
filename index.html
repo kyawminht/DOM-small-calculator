@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    </head>
+    <body>
+      <form action="">
+        <input type="number" name="" id="a">
+        <br>
+        <br>
+        <input type="number" name="" id="b">
+
+        <select name="claculator" id="calculation">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="x">x</option>
+            <option value="/">/</option>
+        </select>
+        <button type="submit">click me</button>
+
+      </form>
+        <p id="result">
+            result here
+        </p>
+       <script>
+
+        const a=document.querySelector("#a");
+        const b=document.querySelector("#b");
+        const button=document.querySelector("button");
+        const result=document.querySelector("#result");
+
+        const calculation=document.querySelector("#calculation");
+
+        let sum;
+        button.addEventListener("click",event=>{
+            event.preventDefault();
+
+            let sum;
+        if (calculation.value=='+'){
+            sum=parseFloat(a.value)+ parseFloat(b.value);
+        }else if(calculation.value == '-'){
+            sum=parseFloat(a.value) - parseFloat(b.value);
+        }else if(calculation.value == 'x'){
+            sum=parseFloat(a.value) * parseFloat(b.value);
+        }else if(calculation.value == '/'){
+            sum=parseFloat(a.value) / parseFloat(b.value);
+        }
+             
+             result.innerText=sum;
+        })
+      
+
+       </script>
+</body>
+</html>
